@@ -24,7 +24,8 @@ Configure Claude Code for quota-optimised model tiering: Sonnet as the working m
 ## Boundaries
 
 - **Handles**: Persistent Claude Code model tiering config — settings, subagent files, advisory rule in CLAUDE.md.
-- **Does not handle**: Post-mortem usage analysis (→ `diagnose-usage`), per-task effort level selection (→ `choose-effort`), CLI upgrades (user's job).
+- **Does not handle**: Post-mortem usage analysis (→ `diagnose-usage`), per-task effort level selection (→ `choose-effort`), plan limits and prices (→ `product-self-knowledge`), CLI upgrades (user's job).
+- **Requires**: Claude Code on the Anthropic API. The advisor tool is experimental and is not available on Bedrock, Vertex, or Foundry.
 
 ## Test results
 
