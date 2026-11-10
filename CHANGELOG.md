@@ -1,3 +1,10 @@
+## 0.1.1 (2026-11-08)
+
+- Fix: the advisory rule and docs told the model to use the `/advisor` slash command. Consultation happens through the `advisor` tool; `/advisor` only switches the advisor model.
+- Launch: plain `claude` with settings.json is now primary; `--advisor opus` documented as a working but unlisted flag.
+- Handoffs: say what to do when `diagnose-usage` / `choose-effort` are not installed.
+- Fix duplicate sibling name in trigger-cases.md.
+
 ## 0.1.0 (2026-11-08)
 
 - Initial release from draft-skill workflow.
