@@ -28,6 +28,7 @@ Configure Claude Code for quota-optimised model tiering: Sonnet as the working m
 
 ## Test results
 
+- Version 0.1.2: 12 pass, 0 fail, 0 reviewed-only, 0 not-run (hand-run against the description and SKILL.md; no live triggering session).
 - Version 0.1.0: 9 pass, 0 fail, 0 reviewed-only, 0 not-run (description-level review).
 
 ## Version

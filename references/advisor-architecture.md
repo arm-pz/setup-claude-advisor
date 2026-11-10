@@ -74,8 +74,7 @@ variable is unset.
 ```json
 {
   "model": "sonnet",
-  "advisorModel": "opus",
-  "customInstructions": "..."
+  "advisorModel": "opus"
 }
 ```
 
