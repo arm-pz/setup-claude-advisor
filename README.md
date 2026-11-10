@@ -1,11 +1,17 @@
 # setup-claude-advisor
 
-Configure Claude Code for quota-optimised model tiering: Sonnet as the working model, Opus as the on-call strategic advisor, and Haiku/Sonnet subagents assigned by role. Shows every proposed change as a diff preview before touching any file.
+An agent skill that sets up Claude Code's built-in advisor tool: Sonnet does the work, Opus advises at three decision points, and Haiku handles read-only subagents. It writes `model` and `advisorModel` to `settings.json`, with no plugin, MCP server or proxy, and shows every change as a diff preview before touching any file.
+
+Built for Claude Pro ($20) users whose Claude Code sessions now default to Opus and who want their usage limit to last longer.
+
+```bash
+npx skills add arm-pz/setup-claude-advisor --skill setup-claude-advisor
+```
 
 ## Install
 
-- Copy the `setup-claude-advisor/` folder into your skills directory (`~/.gemini/skills/`, `~/.claude/skills/`, `~/.qoder/skills/`, or `.agents/skills/`), or
-- `npx skills add arm-pz/setup-claude-advisor --skill setup-claude-advisor`
+- Run the command above, or
+- Copy the `setup-claude-advisor/` folder into your skills directory (`~/.gemini/skills/`, `~/.claude/skills/`, `~/.qoder/skills/`, or `.agents/skills/`).
 
 ## Try it
 
