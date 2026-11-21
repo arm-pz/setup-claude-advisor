@@ -1,3 +1,11 @@
+# Changelog
+
+## 0.2.0 (2026-11-21)
+
+- Detect Claude Code or local Codex automatically.
+- Add local Codex advisor and persistent subagent model setup with a diff preview.
+- Preserve the current main model unless the user requests a change.
+
 ## 0.1.2 (2026-11-10)
 
 Tune-skill pass: small evidenced edits, no workflow change.
