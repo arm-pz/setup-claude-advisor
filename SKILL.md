@@ -51,7 +51,9 @@ Run these checks and present the results in a single report block before proposi
 
 ### 2. Propose the subagent tree
 
-The table shows the classic Haiku and Sonnet preset. Use it when explicitly requested and supported. Otherwise, map each role to a model available to the current account, or let it inherit the session model if availability is unknown. Preserve existing assignments unless the user asks to change them. The target tree has three subagent roles. For each missing role, draft a subagent markdown file. Read `references/advisor-architecture.md` for the role definitions, model assignments, and the rationale. If that file and this one disagree, this file wins.
+The target tree has three subagent roles. For each missing role, draft a subagent markdown file. Read `references/advisor-architecture.md` for the role definitions, model assignments, and the rationale. If that file and this one disagree, this file wins.
+
+The table below shows the classic Haiku and Sonnet preset. Use it when explicitly requested and supported. Otherwise, map each role to a model available to the current account, or let it inherit the session model if availability is unknown. Preserve existing assignments unless the user asks to change them.
 
 | Role | Model | Job |
 |---|---|---|

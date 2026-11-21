@@ -30,8 +30,8 @@ npx skills add arm-pz/setup-claude-advisor --skill setup-claude-advisor
 
 ## Boundaries
 
-- **Handles**: Persistent Claude Code and local Codex model tiering config — settings, subagent files, advisory rule in CLAUDE.md.
-- **Does not handle**: Post-mortem usage analysis (→ `diagnose-usage`), per-task effort level selection (→ `choose-effort`), plan limits and prices (→ `product-self-knowledge`), CLI upgrades (user's job).
+- **Handles**: Persistent Claude Code and local Codex model tiering config — Claude Code settings, subagent files and the advisory rule in CLAUDE.md; Codex agent TOML and the advisory block in `AGENTS.md`.
+- **Does not handle**: Post-mortem usage analysis (→ `diagnose-usage`), per-task effort level selection (→ `choose-effort`), plan limits and prices (→ `product-self-knowledge` in Claude Code, official docs for Codex), CLI upgrades (user's job).
 - **Claude Code advisor requires**: Claude Code on the Anthropic API. The advisor tool is experimental and is not available on Bedrock, Vertex, or Foundry.
 
 ## Test results
