@@ -1,3 +1,9 @@
+# Changelog
+
+## 0.2.0
+
+- Add local Codex advisor and persistent subagent model setup with a diff preview.
+
 ## 0.1.2 (2026-11-10)
 
 Tune-skill pass: small evidenced edits, no workflow change.

@@ -1,23 +1,20 @@
 ---
 name: setup-claude-advisor
-version: 0.1.2
+version: 0.2.0
 description: >-
-  Configure Claude Code for quota-optimised model tiering: Sonnet as the main session model,
-  Opus as the on-call advisor, Haiku for read-only subagents, and Sonnet for code-editing
-  subagents. Audits existing subagents, environment variables, and CLI version before proposing
-  changes; writes settings, subagent files, and an advisory rule to CLAUDE.md only after the
-  user approves a diff preview. Use whenever the user wants to set up the Opus advisor pattern,
-  configure Claude Code model tiers, optimise their $20 plan quota by splitting models across
-  roles, or match a subagent tree that assigns different models to different jobs, even if
-  they never say "advisor" or "tiering". Not for
-  diagnosing why usage already drained (use diagnose-usage), choosing an effort level before a
-  task (use choose-effort), plan limits and prices (use product-self-knowledge), or upgrading
-  Claude Code itself.
+  Configure persistent advisor and subagent model tiers in Claude Code or local Codex.
+  Use when the user wants an Opus advisor, a Codex equivalent for second opinions,
+  or different models for review, reading, and editing across sessions.
+  Audits existing configuration and previews a diff before writing with explicit approval.
+  Not for diagnosing past usage (use diagnose-usage), choosing effort or orchestration for
+  one task (use choose-effort), plan limits or prices, or upgrading a client.
 ---
 
 # Setup Claude Advisor
 
 Set up Claude Code so Sonnet does the work and Opus advises at three decision points, with subagents assigned to the cheapest model that can handle their job. Every change is shown as a diff first; nothing is written until the user says go.
+
+Identify the client first. For local Codex, follow `references/codex-advisor.md`. The steps below apply to Claude Code.
 
 ## Ground rules
 
