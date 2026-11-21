@@ -31,7 +31,7 @@ description and SKILL.md body only. No automated triggering loop.
 | 16 | "Why did yesterday's Codex run exhaust my usage?" | diagnose-usage | asks for evidence of the completed run | PASS |
 | 17 | Set up a project advisor (active host: Codex) | setup-claude-advisor | selects Codex and keeps the current main model without asking which host to use | PASS |
 
-Cases 13-16 were reviewed manually against the updated descriptions.
+Cases 13-17 were reviewed manually against the updated descriptions.
 
 ## Boundary pairs
 
@@ -50,3 +50,4 @@ Cases 13-16 were reviewed manually against the updated descriptions.
 
 - Whether `claude --version` output format matches the version parsing logic on all platforms.
 - Real model behaviour for triggering. These are description-level judgements only.
+- The reciprocal handoffs land with the Choose Effort and Diagnose Usage updates. Merge those PRs before this one to make the full workflow available at release.

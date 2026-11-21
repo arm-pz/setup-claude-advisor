@@ -4,7 +4,8 @@ version: 0.2.0
 description: >-
   Configure persistent advisor and subagent model tiers in Claude Code or local Codex.
   Use when the user wants an Opus advisor, a Codex equivalent for second opinions,
-  or different models for review, reading, and editing across sessions.
+  or different models for review, reading, and editing across sessions, even if the user
+  never says advisor or tiering.
   Audits existing configuration and previews a diff before writing with explicit approval.
   Not for diagnosing past usage (use diagnose-usage), choosing effort or orchestration for
   one task (use choose-effort), plan limits or prices, or upgrading a client.
@@ -16,7 +17,7 @@ Set up persistent advisor and subagent roles on the active host. Choose models b
 
 ## Select the host
 
-Use the active runtime's host and client information to select Codex or Claude Code automatically. For diagnosis, honor any explicitly identified source client for the affected run. For setup or effort advice, honor a different target only if the user explicitly names it. A model name, a CLI installed on disk, or config files in the repository alone do not identify the active host.
+Use the active local client for the configuration preview unless the user explicitly targets another client. A repository can contain files for both hosts. Inspect and write only to the selected target.
 
 For local Codex, follow `references/codex-advisor.md`. The steps below apply to Claude Code. If the host is unknown, outline the role split without proposing file paths or settings. Confirm the target only when needed to preview or apply host-specific changes.
 
