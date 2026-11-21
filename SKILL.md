@@ -12,9 +12,13 @@ description: >-
 
 # Setup Claude Advisor
 
-Set up Claude Code so Sonnet does the work and Opus advises at three decision points, with subagents assigned to the cheapest model that can handle their job. Every change is shown as a diff first; nothing is written until the user says go.
+Set up persistent advisor and subagent roles on the active host. Choose models by role and availability. Preview the diff and wait for approval before writing.
 
-Identify the client first. For local Codex, follow `references/codex-advisor.md`. The steps below apply to Claude Code.
+## Select the host
+
+Use the active runtime's host and client information to select Codex or Claude Code automatically. For diagnosis, honor any explicitly identified source client for the affected run. For setup or effort advice, honor a different target only if the user explicitly names it. A model name, a CLI installed on disk, or config files in the repository alone do not identify the active host.
+
+For local Codex, follow `references/codex-advisor.md`. The steps below apply to Claude Code. If the host is unknown, outline the role split without proposing file paths or settings. Confirm the target only when needed to preview or apply host-specific changes.
 
 ## Ground rules
 
@@ -46,7 +50,7 @@ Run these checks and present the results in a single report block before proposi
 
 ### 2. Propose the subagent tree
 
-The target tree has three subagent roles. For each missing role, draft a subagent markdown file. Read `references/advisor-architecture.md` for the role definitions, model assignments, and the rationale. If that file and this one disagree, this file wins.
+The table shows the classic Haiku and Sonnet preset. Use it when explicitly requested and supported. Otherwise, map each role to a model available to the current account, or let it inherit the session model if availability is unknown. Preserve existing assignments unless the user asks to change them. The target tree has three subagent roles. For each missing role, draft a subagent markdown file. Read `references/advisor-architecture.md` for the role definitions, model assignments, and the rationale. If that file and this one disagree, this file wins.
 
 | Role | Model | Job |
 |---|---|---|
@@ -56,7 +60,7 @@ The target tree has three subagent roles. For each missing role, draft a subagen
 
 ### 3. Propose settings changes
 
-Draft the `~/.claude/settings.json` patch:
+Draft only the needed changes to `~/.claude/settings.json`. Keep the current `model` unless the user explicitly wants to change it. Use an advisor model confirmed by the current client. For an explicitly requested classic Sonnet–Opus setup, the patch would look like this:
 
 ```json
 {
@@ -112,7 +116,7 @@ After applying (or as part of the preview), show the launch command:
 claude
 ```
 
-Explain: "With `model` and `advisorModel` set in settings.json, a plain `claude` starts with Sonnet as the working model and Opus as the advisor. Sonnet writes the code; Opus reads the full session and gives strategic advice when Sonnet calls the `advisor` tool. `/advisor` only shows or switches the advisor model (`/advisor <fable|opus|sonnet|off>`)."
+Explain which working and advisor models the preview or applied configuration uses. The working model owns the task and consults the advisor at the defined checkpoints. Use `/advisor` to inspect or switch the advisor model where supported.
 
 The CLI also accepts `claude --model sonnet --advisor opus` as a one-off override. It works but is not listed in `claude --help`, so treat settings.json as the primary mechanism.
 

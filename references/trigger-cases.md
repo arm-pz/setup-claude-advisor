@@ -29,6 +29,7 @@ description and SKILL.md body only. No automated triggering loop.
 | 14 | "Use cheaper readers and a stronger Codex model for second opinions across sessions" | setup-claude-advisor | checks available models and previews persistent config | PASS |
 | 15 | "Should I use Ultra for this one Codex migration?" | choose-effort | proposes no persistent configuration | PASS |
 | 16 | "Why did yesterday's Codex run exhaust my usage?" | diagnose-usage | asks for evidence of the completed run | PASS |
+| 17 | Set up a project advisor (active host: Codex) | setup-claude-advisor | selects Codex and keeps the current main model without asking which host to use | PASS |
 
 Cases 13-16 were reviewed manually against the updated descriptions.
 

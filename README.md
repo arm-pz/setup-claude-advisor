@@ -1,6 +1,6 @@
 # setup-claude-advisor
 
-An agent skill that sets up Claude Code's built-in advisor tool: Sonnet does the work, Opus advises at three decision points, and Haiku handles read-only subagents. It writes `model` and `advisorModel` to `settings.json`, with no plugin, MCP server or proxy, and shows every change as a diff preview before touching any file.
+An agent skill that configures an advisor and persistent subagent roles on the active host. In Claude Code it uses the built-in advisor; in local Codex it uses a custom subagent. It shows a diff before writing and keeps the main model unless you request a change.
 
 In local Codex, the skill configures a custom advisor subagent for second opinions and previews changes to agent TOML and `AGENTS.md` before writing. See [Codex advisor setup](references/codex-advisor.md).
 
@@ -25,7 +25,7 @@ npx skills add arm-pz/setup-claude-advisor --skill setup-claude-advisor
 
 1. **Pre-flight diagnostics**: Checks Claude Code version (≥ 2.1.293), environment variables (`CLAUDE_CODE_DISABLE_ADVISOR_TOOL`, `DISABLE_TELEMETRY`, `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`), and scans existing subagent files.
 2. **Subagent tree**: Reuses existing subagents that fit; proposes new ones only for missing roles (code reader → Haiku, doc lookup → Haiku, code editor → Sonnet).
-3. **Settings**: Patches `~/.claude/settings.json` with `model: sonnet` and `advisorModel: opus`.
+3. **Settings**: Previews an available advisor model in `~/.claude/settings.json`. Changes the main model only on request.
 4. **Advisory rule**: Appends a 3-moment protocol to `~/.claude/CLAUDE.md` (before committing to a plan, when the same error recurs, before declaring done).
 5. **Diff preview**: Shows all changes in one block. Writes nothing until you approve.
 
